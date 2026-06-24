@@ -1,0 +1,15 @@
+{
+  "chainId": 11155111,
+  "network": "sepolia",
+  "deployer": "0x3f32B33118e94136458159d949BA0d52e6C8A589",
+  "deployedAt": "2026-06-24T11:24:25.615Z",
+  "contracts": {
+    "SimpleERC20": "0xDa25f14fF57b391B927d55484642C83840E3eAAE",
+    "WEXToken": "0x5053541bB9Ea3c9477346B1d6533Ac2e2B71A3Af",
+    "SimpleNFT": "0xa2e1E5819D90C1e7DC7dc6e64984AEcb1a06d908",
+    "StakingPool": "0x1D43F9846DB63557eF860414304E0A892f3B221b",
+    "SimpleSwap": "0xaA00bA9Eb661e34a9806aD039F6384671A11350b",
+    "BankPolicyRegistry": "0x7fA538D7b4E5d80fbA155A1e0c0580BFAAd802b4",
+    "BankDepositToken": "0x524a874f746c8048D0e5EB8D74E8A3095CfF1AC7"
+  }
+}

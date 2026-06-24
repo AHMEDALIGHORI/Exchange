@@ -1,0 +1,24 @@
+.container {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-raised);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #18181b;
+  transition: var(--transition-elevate);
+}
+
+.mark {
+  display: block;
+  border-radius: inherit;
+}
+
+.interactive:hover {
+  box-shadow: var(--shadow-raised-hover);
+  transform: translateY(var(--hover-lift-subtle));
+}
+
+.interactive:hover .mark {
+  filter: brightness(1.06);
+}

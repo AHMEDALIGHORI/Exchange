@@ -1,0 +1,560 @@
+/* ── Staking Simulator Styles ─────────────────────────── */
+
+.container {
+  padding: 32px 36px 60px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 28px;
+  animation: fadeSlideIn 0.5s ease both;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 4px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: rgba(255,255,255,0.45);
+  margin: 0;
+}
+
+/* Main Grid */
+.mainGrid {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 24px;
+}
+
+/* Config Panel */
+.configPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  animation: fadeSlideIn 0.55s ease both;
+}
+
+.section {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.sectionLabel {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.45);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+/* Token Grid */
+.tokenGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.tokenBtn {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.07);
+  background: rgba(255,255,255,0.02);
+  color: rgba(255,255,255,0.6);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.tokenBtn:hover {
+  border-color: color-mix(in srgb, var(--token-color) 30%, transparent);
+  background: color-mix(in srgb, var(--token-color) 6%, transparent);
+}
+
+.tokenActive {
+  border-color: color-mix(in srgb, var(--token-color) 50%, transparent);
+  background: color-mix(in srgb, var(--token-color) 10%, transparent);
+  color: #fff;
+}
+
+.tokenDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.tokenBtnInfo {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.tokenSymbol {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.tokenPrice {
+  font-size: 10px;
+  color: rgba(255,255,255,0.35);
+}
+
+/* Amount Input */
+.amountRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0,0,0,0.2);
+  border-radius: 12px;
+  padding: 4px 14px 4px 4px;
+  margin-bottom: 8px;
+}
+
+.amountInput {
+  flex: 1;
+  padding: 12px 14px;
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 800;
+  outline: none;
+  font-family: var(--font);
+  min-width: 0;
+}
+
+.amountInput::placeholder {
+  color: rgba(255,255,255,0.2);
+}
+
+.amountSymbol {
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.5);
+  flex-shrink: 0;
+}
+
+.amountUsd {
+  font-size: 13px;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 10px;
+}
+
+.quickAmounts {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.quickAmountBtn {
+  padding: 5px 10px;
+  border-radius: 7px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
+  color: rgba(255,255,255,0.5);
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.quickAmountBtn:hover {
+  background: rgba(124,58,237,0.1);
+  border-color: rgba(124,58,237,0.25);
+  color: #c4b5fd;
+}
+
+/* APY Slider */
+.apyHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.apyValue {
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.apySlider {
+  width: 100%;
+  height: 6px;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 6px;
+  background: linear-gradient(to right, var(--slider-color) var(--slider-pct), rgba(255,255,255,0.08) var(--slider-pct));
+  outline: none;
+  margin: 8px 0 12px;
+  cursor: pointer;
+}
+
+.apySlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid var(--slider-color);
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.apySlider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid var(--slider-color);
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.apyPresets {
+  display: flex;
+  gap: 6px;
+}
+
+.apyPresetBtn {
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
+  color: rgba(255,255,255,0.45);
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.apyPresetBtn:hover {
+  background: rgba(124,58,237,0.1);
+  color: #c4b5fd;
+}
+
+/* Duration Grid */
+.durationGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.durationBtn {
+  padding: 9px;
+  border-radius: 9px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
+  color: rgba(255,255,255,0.55);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.durationBtn:hover {
+  border-color: rgba(124,58,237,0.25);
+  background: rgba(124,58,237,0.06);
+}
+
+.durationActive {
+  border-color: rgba(124,58,237,0.5);
+  background: rgba(124,58,237,0.12);
+  color: #c4b5fd;
+}
+
+/* Toggle */
+.toggleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toggleLabel {
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  font-weight: 500;
+}
+
+.toggle {
+  width: 44px;
+  height: 24px;
+  border-radius: 12px;
+  border: none;
+  background: rgba(255,255,255,0.1);
+  cursor: pointer;
+  position: relative;
+  transition: background 0.25s;
+  padding: 0;
+}
+
+.toggleOn {
+  background: rgba(124,58,237,0.5);
+}
+
+.toggleDot {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 0.25s;
+}
+
+.toggleOn .toggleDot {
+  transform: translateX(20px);
+}
+
+/* Results Panel */
+.resultsPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: fadeSlideIn 0.6s ease both;
+}
+
+/* Summary Cards */
+.summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.summaryCard {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 22px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-raised);
+  transition: var(--transition-elevate);
+}
+
+.summaryCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--card-color);
+  opacity: 0.6;
+}
+
+.summaryCard:hover {
+  transform: translateY(var(--hover-lift));
+  box-shadow: var(--shadow-raised-hover);
+}
+
+.summaryLabel {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin-bottom: 10px;
+}
+
+.summaryValue {
+  display: block;
+  font-size: 22px;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.summaryUsd {
+  display: block;
+  font-size: 14px;
+  color: rgba(255,255,255,0.45);
+  font-weight: 500;
+}
+
+/* Chart Card */
+.chartCard, .breakdownCard, .providerCard {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: var(--shadow-raised);
+}
+
+.chartTitle {
+  font-size: 16px;
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 3px;
+}
+
+.chartSub {
+  font-size: 12px;
+  color: rgba(255,255,255,0.35);
+  margin: 0 0 16px;
+}
+
+/* Tooltip */
+.tooltip {
+  background: rgba(20, 10, 50, 0.95);
+  border: 1px solid rgba(124, 58, 237, 0.3);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: #fff;
+  backdrop-filter: blur(12px);
+}
+
+/* Breakdown Grid */
+.breakdownGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.breakdownItem {
+  background: rgba(255,255,255,0.03);
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+}
+
+.breakdownLabel {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.breakdownTokens {
+  display: block;
+  font-size: 15px;
+  font-weight: 800;
+  color: #34d399;
+  margin-bottom: 3px;
+}
+
+.breakdownUsd {
+  display: block;
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+}
+
+/* Provider Table */
+.providerTable {
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.providerHead, .providerRow {
+  display: grid;
+  grid-template-columns: 1.5fr 0.7fr 0.7fr 1fr 0.7fr;
+  padding: 10px 16px;
+  font-size: 12px;
+  gap: 8px;
+  align-items: center;
+}
+
+.providerHead {
+  background: rgba(255,255,255,0.04);
+  color: rgba(255,255,255,0.4);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  font-size: 10px;
+}
+
+.providerRow {
+  color: rgba(255,255,255,0.65);
+  border-top: 1px solid rgba(255,255,255,0.04);
+  transition: background 0.2s;
+}
+
+.providerRow:hover {
+  background: rgba(255,255,255,0.03);
+}
+
+.providerName {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.providerDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.providerApy {
+  color: #34d399;
+  font-weight: 700;
+}
+
+.providerFee {
+  color: rgba(255,255,255,0.45);
+}
+
+.providerProtocol {
+  color: rgba(255,255,255,0.5);
+  font-size: 11px;
+}
+
+.riskBadge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.riskLow {
+  background: rgba(52,211,153,0.12);
+  color: #34d399;
+}
+
+.riskMedium {
+  background: rgba(251,191,36,0.12);
+  color: #fbbf24;
+}
+
+.riskHigh {
+  background: rgba(239,68,68,0.12);
+  color: #fca5a5;
+}
+
+/* Animations */
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .container { padding: 20px 16px 40px; }
+  .mainGrid { grid-template-columns: 1fr; }
+  .tokenGrid { grid-template-columns: repeat(3, 1fr); }
+  .summaryGrid { grid-template-columns: 1fr; }
+  .breakdownGrid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 500px) {
+  .tokenGrid { grid-template-columns: repeat(2, 1fr); }
+  .durationGrid { grid-template-columns: repeat(2, 1fr); }
+}

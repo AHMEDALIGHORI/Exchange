@@ -1,0 +1,175 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Terminal-native neutrals — tinted toward ink, not purple wash */
+  --bg-primary: #09090b;
+  --bg-secondary: #111113;
+  --bg-surface: #18181b;
+  --bg-elevated: #1f1f23;
+
+  --ink: #fafafa;
+  --ink-muted: #a1a1aa;
+  --ink-subtle: #71717a;
+  --border: rgba(255, 255, 255, 0.1);
+  --border-strong: rgba(255, 255, 255, 0.16);
+
+  /* Single accent — primary actions & focus only */
+  --accent: #8b5cf6;
+  --accent-hover: #7c3aed;
+  --accent-muted: rgba(139, 92, 246, 0.14);
+
+  /* Semantic neon indicators */
+  --status-success: #22c55e;
+  --status-warning: #f97316;
+  --status-danger: #ef4444;
+  --status-info: #38bdf8;
+
+  /* Legacy aliases used across modules */
+  --white: var(--ink);
+  --text-muted: var(--ink-muted);
+  --text-subtle: var(--ink-subtle);
+  --border-light: var(--border);
+  --purple-mid: var(--accent);
+  --purple-light: #a78bfa;
+  --purple-accent: #c4b5fd;
+  --btn-purple: var(--accent);
+  --btn-purple-hover: var(--accent-hover);
+  --violet-deep: var(--bg-secondary);
+  --glow-bitcoin: rgba(249, 115, 22, 0.45);
+  --glow-purple: rgba(139, 92, 246, 0.35);
+  --glow-red: rgba(239, 68, 68, 0.4);
+
+  --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Code', monospace;
+
+  --z-sticky: 100;
+  --z-drawer: 200;
+  --z-modal: 300;
+
+  /* Subtle physical depth — shared across cards/panels */
+  --border-top-highlight: rgba(255, 255, 255, 0.07);
+  --shadow-inset-highlight: inset 0 1px 0 0 var(--border-top-highlight);
+  --shadow-raised:
+    var(--shadow-inset-highlight),
+    0 1px 2px rgba(0, 0, 0, 0.22),
+    0 4px 12px rgba(0, 0, 0, 0.16),
+    0 8px 24px rgba(0, 0, 0, 0.1);
+  --shadow-raised-hover:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.09),
+    0 2px 4px rgba(0, 0, 0, 0.26),
+    0 8px 20px rgba(0, 0, 0, 0.2),
+    0 16px 36px rgba(0, 0, 0, 0.14);
+  --transition-elevate: box-shadow 0.22s ease, transform 0.22s ease, border-color 0.22s ease;
+  --hover-lift: -2px;
+  --hover-lift-subtle: -1px;
+}
+
+/* Opt-in elevation utilities — use in JSX or composes from global */
+.surface-raised {
+  box-shadow: var(--shadow-raised);
+}
+
+.surface-raised-interactive {
+  transition: var(--transition-elevate);
+}
+
+.surface-raised-interactive:hover {
+  box-shadow: var(--shadow-raised-hover);
+  transform: translateY(-2px);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-elevated);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg-primary);
+  color: var(--ink);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font);
+  border: none;
+  outline: none;
+}
+
+input {
+  font-family: var(--font);
+  outline: none;
+  border: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+}
+
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .surface-raised-interactive:hover {
+    transform: none;
+  }
+
+  :root {
+    --hover-lift: 0px;
+    --hover-lift-subtle: 0px;
+  }
+}

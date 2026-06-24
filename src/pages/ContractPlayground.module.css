@@ -1,0 +1,374 @@
+.container {
+  padding: 32px 36px 60px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 4px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.45);
+  margin: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 28px;
+}
+
+.panel {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: var(--shadow-raised);
+}
+
+.sectionTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.formLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.formSelect {
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 13.5px;
+  outline: none;
+  font-family: var(--font);
+  cursor: pointer;
+}
+
+.formSelect:focus {
+  border-color: #7c3aed;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+/* Editor Style */
+.editorWrapper {
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  background: #0d0e12;
+}
+
+.editorHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  background: #14151a;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.editorTitle {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.55);
+  font-family: var(--font-mono);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.editorLang {
+  font-size: 11px;
+  color: #3b82f6;
+  font-weight: 700;
+}
+
+.textarea {
+  width: 100%;
+  height: 380px;
+  background: transparent;
+  border: none;
+  color: #a7f3d0; /* Soft green solidity text color */
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.5;
+  padding: 16px;
+  resize: vertical;
+  outline: none;
+  tab-size: 4;
+}
+
+/* Compiler console */
+.console {
+  background: #090a0f;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 14px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  height: 160px;
+  overflow-y: auto;
+}
+
+.consoleHeader {
+  display: flex;
+  justify-content: space-between;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 11px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  padding-bottom: 4px;
+}
+
+.consoleLine {
+  margin: 4px 0;
+  white-space: pre-wrap;
+  color: #cbd5e1;
+}
+
+.consoleSuccess {
+  color: #10b981;
+}
+
+.consoleError {
+  color: #ef4444;
+}
+
+.consoleInfo {
+  color: #60a5fa;
+}
+
+/* Deployed section */
+.deployedSection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.actionBtnRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.compileBtn {
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.compileBtn:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.deployBtn {
+  padding: 12px;
+  background: linear-gradient(135deg, #7c3aed, #6d28d9);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.deployBtn:hover:not(:disabled) {
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+}
+
+.deployBtn:disabled {
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.25);
+  cursor: not-allowed;
+}
+
+/* Deployed Contract Cards */
+.deployedList {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contractCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.contractCardHeader {
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contractName {
+  font-weight: 700;
+  color: #fff;
+  font-size: 14px;
+}
+
+.contractAddress {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.contractContent {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.methodRow {
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.methodHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.methodName {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 12.5px;
+  color: #c4b5fd;
+}
+
+.methodBadge {
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.badgeRead {
+  background: rgba(96, 165, 250, 0.15);
+  color: #60a5fa;
+}
+
+.badgeWrite {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+}
+
+.methodInputs {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.methodInput {
+  flex: 1;
+  padding: 6px 10px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  color: #fff;
+  font-size: 12px;
+  outline: none;
+}
+
+.methodInput:focus {
+  border-color: #7c3aed;
+}
+
+.methodCallBtn {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  transition: all 0.2s;
+}
+
+.methodCallBtn:hover {
+  background: rgba(124, 58, 237, 0.2);
+  color: #c4b5fd;
+}
+
+.methodResult {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #10b981;
+  padding-top: 4px;
+  word-break: break-all;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 30px 20px;
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 13px;
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

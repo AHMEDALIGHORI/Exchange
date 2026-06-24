@@ -1,0 +1,43 @@
+{
+  "name": "exchange",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "check:onchain": "node scripts/check-onchain-config.js",
+    "setup:deployer": "node scripts/generate-deployer.js",
+    "check:deployer": "node scripts/check-deployer-balance.js",
+    "sync:deploy-env": "node scripts/sync-deploy-env.js",
+    "compile:contracts": "hardhat compile && node scripts/export-artifacts.js",
+    "deploy:sepolia": "hardhat run scripts/deploy.js --network sepolia",
+    "deploy:complete": "hardhat run scripts/complete-deploy.js --network sepolia"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.90.2",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "react-router-dom": "^7.18.0",
+    "recharts": "^3.8.1",
+    "viem": "^2.37.8",
+    "wagmi": "^2.17.5"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@nomicfoundation/hardhat-toolbox": "^6.1.0",
+    "@openzeppelin/contracts": "^5.4.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "dotenv": "^17.2.2",
+    "eslint": "^10.3.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "globals": "^17.6.0",
+    "hardhat": "^2.26.3",
+    "vite": "^8.0.12"
+  }
+}

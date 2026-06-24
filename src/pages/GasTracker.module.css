@@ -1,0 +1,442 @@
+/* ── Gas Tracker Styles ───────────────────────────────── */
+
+.container {
+  padding: 32px 36px 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  animation: fadeSlideIn 0.5s ease both;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 4px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: rgba(255,255,255,0.45);
+  margin: 0;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.refreshInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+}
+
+.livePulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #34d399;
+  animation: pulse 2s infinite;
+}
+
+.lastUpdate {
+  color: rgba(255,255,255,0.3);
+  margin-left: 4px;
+}
+
+.refreshBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(124,58,237,0.25);
+  background: rgba(124,58,237,0.08);
+  color: #c4b5fd;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.refreshBtn:hover {
+  background: rgba(124,58,237,0.18);
+  border-color: rgba(124,58,237,0.4);
+}
+
+.refreshBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Time Banner */
+.timeBanner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  background: color-mix(in srgb, var(--banner-color) 6%, transparent);
+  border: 1px solid color-mix(in srgb, var(--banner-color) 20%, transparent);
+  border-radius: 14px;
+  margin-bottom: 24px;
+  animation: fadeSlideIn 0.55s ease both;
+}
+
+.ethPriceTag {
+  margin-left: auto;
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.06);
+  padding: 4px 12px;
+  border-radius: 8px;
+}
+
+/* Gas Cards Grid */
+.gasGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.gasCard {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 22px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-raised);
+  transition: var(--transition-elevate);
+  animation: fadeSlideIn 0.5s ease both;
+}
+
+.gasCard:nth-child(1) { animation-delay: 0s; }
+.gasCard:nth-child(2) { animation-delay: 0.05s; }
+.gasCard:nth-child(3) { animation-delay: 0.1s; }
+.gasCard:nth-child(4) { animation-delay: 0.15s; }
+
+.gasCard:hover {
+  transform: translateY(var(--hover-lift));
+  border-color: color-mix(in srgb, var(--card-color) 35%, transparent);
+  box-shadow: var(--shadow-raised-hover);
+}
+
+.recommended {
+  border-color: rgba(52,211,153,0.3);
+  background: rgba(52,211,153,0.04);
+}
+
+.recommendBadge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(52,211,153,0.15);
+  color: #34d399;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.gasCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.gasLabel {
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.7);
+}
+
+.gasSpeed {
+  font-size: 11px;
+  color: rgba(255,255,255,0.35);
+  background: rgba(255,255,255,0.05);
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.gweiValue {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.gweiNum {
+  font-size: 32px;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+}
+
+.gweiUnit {
+  font-size: 14px;
+  color: rgba(255,255,255,0.4);
+  font-weight: 600;
+}
+
+.costRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.ethCost {
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+}
+
+.usdCost {
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+  font-weight: 600;
+}
+
+.gasBar {
+  height: 4px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.gasBarFill {
+  height: 100%;
+  width: 100%;
+  border-radius: 4px;
+  transform-origin: left;
+  transition: transform 0.6s ease;
+}
+
+/* Bottom Row */
+.bottomRow {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 20px;
+}
+
+.chartCard, .calcCard {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: var(--shadow-raised);
+  animation: fadeSlideIn 0.6s ease both;
+}
+
+.chartCard {
+  animation-delay: 0.1s;
+}
+
+.calcCard {
+  animation-delay: 0.15s;
+}
+
+.chartHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.chartTitle {
+  font-size: 16px;
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 3px;
+}
+
+.chartSub {
+  font-size: 12px;
+  color: rgba(255,255,255,0.35);
+  margin: 0 0 16px;
+}
+
+/* Tooltip */
+.tooltip {
+  background: rgba(20, 10, 50, 0.95);
+  border: 1px solid rgba(124, 58, 237, 0.3);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 12px;
+  color: #fff;
+  backdrop-filter: blur(12px);
+}
+
+.tooltipLabel {
+  font-weight: 700;
+  margin: 0 0 4px;
+  color: rgba(255,255,255,0.5);
+}
+
+/* Preset Grid */
+.presetGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.presetBtn {
+  padding: 10px 8px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.07);
+  background: rgba(255,255,255,0.03);
+  color: rgba(255,255,255,0.6);
+  font-size: 11px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s;
+}
+
+.presetBtn:hover {
+  background: rgba(124,58,237,0.08);
+  border-color: rgba(124,58,237,0.2);
+}
+
+.presetActive {
+  background: rgba(124,58,237,0.12);
+  border-color: rgba(124,58,237,0.4);
+  color: #c4b5fd;
+}
+
+.presetIcon {
+  font-size: 18px;
+}
+
+.presetLabel {
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* Custom Gas */
+.customGasRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.customLabel {
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+  white-space: nowrap;
+}
+
+.customInput {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.04);
+  color: #fff;
+  font-size: 13px;
+  outline: none;
+  font-family: var(--font);
+  transition: border-color 0.2s;
+}
+
+.customInput::placeholder {
+  color: rgba(255,255,255,0.25);
+}
+
+.customInput:focus {
+  border-color: rgba(124,58,237,0.4);
+}
+
+/* Cost Table */
+.costTable {
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+
+.costTableHead, .costTableRow {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 1fr 0.8fr;
+  padding: 10px 14px;
+  font-size: 12px;
+  gap: 8px;
+}
+
+.costTableHead {
+  background: rgba(255,255,255,0.04);
+  color: rgba(255,255,255,0.4);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  font-size: 10px;
+}
+
+.costTableRow {
+  color: rgba(255,255,255,0.65);
+  border-top: 1px solid rgba(255,255,255,0.04);
+  transition: background 0.2s;
+}
+
+.costTableRow:hover {
+  background: rgba(255,255,255,0.03);
+}
+
+.usdHighlight {
+  color: #fff;
+  font-weight: 700;
+}
+
+.gasNote {
+  font-size: 11px;
+  color: rgba(255,255,255,0.3);
+  text-align: center;
+}
+
+.gasNote strong {
+  color: rgba(255,255,255,0.5);
+}
+
+/* Animations */
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .container { padding: 20px 16px 40px; }
+  .gasGrid { grid-template-columns: repeat(2, 1fr); }
+  .bottomRow { grid-template-columns: 1fr; }
+  .header { flex-direction: column; gap: 12px; }
+  .presetGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 500px) {
+  .gasGrid { grid-template-columns: 1fr; }
+  .presetGrid { grid-template-columns: 1fr 1fr; }
+}

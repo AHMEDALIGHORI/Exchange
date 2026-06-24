@@ -1,0 +1,306 @@
+.container {
+  padding: 28px 32px;
+  min-height: 100vh;
+  background: transparent;
+  animation: pageEnter 0.5s ease both;
+}
+
+@keyframes pageEnter {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.header {
+  margin-bottom: 28px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.overviewGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.statsCard {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: var(--shadow-raised);
+  transition: var(--transition-elevate);
+  position: relative;
+  overflow: hidden;
+}
+
+.statsCard:hover {
+  transform: translateY(var(--hover-lift));
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-raised-hover);
+}
+
+.statsLabel {
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.45);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.statsValue {
+  font-size: 26px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.statsSub {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.chartCard {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: var(--shadow-raised);
+  transition: var(--transition-elevate);
+}
+
+.chartCard:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-raised-hover);
+  transform: translateY(var(--hover-lift));
+}
+
+.cardTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.cardSub {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.38);
+  margin-bottom: 20px;
+}
+
+.chartWrapper {
+  width: 100%;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+  margin-top: 10px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  text-align: left;
+}
+
+.table thead tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.table th {
+  padding: 10px 14px;
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.35);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.tableRow {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  transition: background 0.2s;
+  animation: rowEnter 0.5s cubic-bezier(0.22, 1, 0.36, 1) calc(var(--i) * 0.06s) both;
+}
+
+@keyframes rowEnter {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.tableRow:hover {
+  background: rgba(124, 58, 237, 0.06);
+}
+
+.tableRow td {
+  padding: 14px 14px;
+  vertical-align: middle;
+}
+
+.assetCell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.assetDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.assetName {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.symbolCell {
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 600;
+}
+
+.amtCell {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+.totalValue {
+  text-align: right;
+}
+
+.totalLabel {
+  display: block;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.totalAmount {
+  font-size: 28px;
+  font-weight: 800;
+  color: #fff;
+}
+
+.sectionTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.assetsCard {
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  padding: 22px;
+}
+
+.assetList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.assetRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.assetLeft, .assetRight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.assetRight {
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.assetBadge {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  border: 1px solid;
+}
+
+.assetAmount, .assetChange {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.assetValue {
+  font-weight: 700;
+  color: #fff;
+}
+
+.emptyState {
+  color: rgba(255, 255, 255, 0.45);
+  padding: 20px 0;
+}
+
+.valCell {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.changeBadge {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.up {
+  background: rgba(16, 185, 129, 0.12);
+  color: #34d399;
+}
+
+.down {
+  background: rgba(239, 68, 68, 0.12);
+  color: #f87171;
+}
+
+.barContainer {
+  width: 80px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  border-radius: 3px;
+}
+
+@media (max-width: 900px) {
+  .overviewGrid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .container {
+    padding: 20px 16px;
+  }
+}

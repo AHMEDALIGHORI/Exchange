@@ -1,0 +1,282 @@
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  align-items: center;
+  gap: 48px;
+  padding: 48px 40px 64px;
+  min-height: calc(100vh - 72px);
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.heroLeft {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.networkStage {
+  position: relative;
+  width: min(480px, 100%);
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.networkLines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.networkLine {
+  stroke: rgba(255, 255, 255, 0.14);
+  stroke-width: 0.35;
+  stroke-linecap: round;
+}
+
+.networkLineFaint {
+  stroke: rgba(255, 255, 255, 0.06);
+  stroke-width: 0.2;
+  stroke-linecap: round;
+}
+
+.coinFrame {
+  position: relative;
+  width: 68%;
+  aspect-ratio: 1;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coinFrameRing {
+  position: absolute;
+  inset: -5%;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    #fcd34d 0deg,
+    #f59e0b 60deg,
+    #d97706 120deg,
+    #fbbf24 180deg,
+    #fcd34d 240deg,
+    #f59e0b 300deg,
+    #fcd34d 360deg
+  );
+  box-shadow: var(--shadow-raised);
+}
+
+.coinFrameInner {
+  position: relative;
+  z-index: 2;
+  width: 92%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #f4f4f5;
+  box-shadow: var(--shadow-inset-highlight), inset 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.coinImage {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  transform: scale(1.08);
+}
+
+.floatingNode {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  margin: -20px 0 0 -20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 800;
+  z-index: 4;
+  border: 2px solid rgba(255, 255, 255, 0.28);
+  box-shadow: var(--shadow-raised);
+  animation: nodeFloat 5s ease-in-out infinite;
+  animation-delay: var(--node-delay, 0s);
+}
+
+@keyframes nodeFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.heroRight {
+  display: flex;
+  align-items: center;
+}
+
+.heroContent {
+  width: 100%;
+  max-width: 520px;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-subtle);
+  margin-bottom: 14px;
+  letter-spacing: 0.04em;
+}
+
+.heroTitle {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+  margin-bottom: 16px;
+}
+
+.heroDescription {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--ink-muted);
+  max-width: 52ch;
+  text-wrap: pretty;
+  margin-bottom: 28px;
+}
+
+.registerForm {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  max-width: 420px;
+  margin-bottom: 14px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--bg-surface);
+  box-shadow: var(--shadow-raised);
+}
+
+.emailInput {
+  flex: 1;
+  min-width: 0;
+  padding: 13px 16px;
+  background: transparent;
+  color: var(--ink);
+  font-size: 14px;
+}
+
+.emailInput::placeholder {
+  color: var(--ink-subtle);
+}
+
+.registerBtn {
+  padding: 13px 20px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background 0.18s ease;
+}
+
+.registerBtn:hover {
+  background: var(--accent-hover);
+}
+
+.ctaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.secondaryBtn,
+.ghostBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+.secondaryBtn {
+  background: var(--accent-muted);
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  color: #ddd6fe;
+  box-shadow: var(--shadow-raised);
+}
+
+.secondaryBtn:hover {
+  background: rgba(139, 92, 246, 0.22);
+  border-color: rgba(139, 92, 246, 0.55);
+  box-shadow: var(--shadow-raised-hover);
+  transform: translateY(var(--hover-lift-subtle));
+}
+
+.ghostBtn {
+  border: 1px solid var(--border);
+  color: var(--ink-muted);
+  box-shadow: var(--shadow-raised);
+}
+
+.ghostBtn:hover {
+  color: var(--ink);
+  border-color: var(--border-strong);
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: var(--shadow-raised-hover);
+  transform: translateY(var(--hover-lift-subtle));
+}
+
+@media (max-width: 960px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 32px 24px 56px;
+    gap: 32px;
+    min-height: auto;
+  }
+
+  .heroContent {
+    max-width: none;
+  }
+
+  .networkStage {
+    width: min(360px, 100%);
+  }
+
+  .floatingNode {
+    width: 34px;
+    height: 34px;
+    margin: -17px 0 0 -17px;
+    font-size: 13px;
+  }
+
+  .registerForm {
+    flex-direction: column;
+    max-width: none;
+    border-radius: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floatingNode {
+    animation: none;
+  }
+
+  .secondaryBtn:hover,
+  .ghostBtn:hover {
+    transform: none;
+  }
+}

@@ -1,0 +1,268 @@
+.container {
+  padding: 28px 32px;
+  min-height: 100vh;
+  background: transparent;
+  animation: pageEnter 0.5s ease both;
+}
+
+@keyframes pageEnter {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.header {
+  margin-bottom: 28px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* Toolbar */
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.filterBtns {
+  display: flex;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 4px;
+  border-radius: 10px;
+}
+
+.filterBtn {
+  padding: 7px 16px;
+  background: none;
+  border: none;
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: var(--font);
+}
+
+.filterBtn:hover {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.activeFilter {
+  background: #7c3aed;
+  color: #ffffff !important;
+  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 8px 14px;
+  width: 280px;
+  transition: all 0.2s;
+}
+
+.searchBox:focus-within {
+  border-color: rgba(124, 58, 237, 0.5);
+  background: rgba(124, 58, 237, 0.06);
+}
+
+.searchBox input {
+  background: none;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 13px;
+  width: 100%;
+  font-family: var(--font);
+}
+
+.searchBox input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* Ledger Card */
+.ledgerCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  padding: 22px;
+  transition: all 0.3s;
+}
+
+.loadingState,
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 14px;
+  text-align: center;
+}
+
+.spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid rgba(124, 58, 237, 0.15);
+  border-top-color: #7c3aed;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.tableWrapper {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+
+.table thead tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.table th {
+  padding: 10px 14px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.35);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.tableRow {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  transition: background 0.2s;
+  animation: rowEnter 0.5s cubic-bezier(0.22, 1, 0.36, 1) calc(var(--i) * 0.05s) both;
+}
+
+@keyframes rowEnter {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.tableRow:hover {
+  background: rgba(124, 58, 237, 0.07);
+}
+
+.tableRow td {
+  padding: 14px 14px;
+  vertical-align: middle;
+}
+
+.badge {
+  font-size: 10px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badgeSent {
+  background: rgba(239, 68, 68, 0.12);
+  color: #f87171;
+}
+
+.badgeRecv {
+  background: rgba(16, 185, 129, 0.12);
+  color: #34d399;
+}
+
+.hashLink {
+  color: #a78bfa;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.hashLink:hover {
+  color: #c084fc;
+}
+
+.dirCell {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dirLabel {
+  color: rgba(255, 255, 255, 0.3);
+  font-weight: 600;
+}
+
+.dirAddr {
+  color: rgba(255, 255, 255, 0.65);
+  font-weight: 500;
+}
+
+.valueCell {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.usdCell {
+  color: rgba(255, 255, 255, 0.45);
+  font-variant-numeric: tabular-nums;
+}
+
+.timeCell {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.statusLabel {
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.success { color: #34d399; }
+.failed { color: #f87171; }
+
+@media (max-width: 800px) {
+  .toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .searchBox {
+    width: 100%;
+  }
+  .filterBtns {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .filterBtn {
+    flex: 1;
+    text-align: center;
+  }
+  .container {
+    padding: 20px 16px;
+  }
+}

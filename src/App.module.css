@@ -1,0 +1,45 @@
+.app {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a0b3c 0%, #2a1260 45%, #3b1a78 100%);
+  position: relative;
+}
+
+.app::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(124, 58, 237, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(88, 28, 235, 0.1) 0%, transparent 45%),
+    radial-gradient(ellipse at 60% 80%, rgba(109, 40, 217, 0.08) 0%, transparent 45%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Subtle diagonal geometric shapes in background */
+.app::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(
+      135deg,
+      transparent 40%,
+      rgba(124, 58, 237, 0.04) 40%,
+      rgba(124, 58, 237, 0.04) 60%,
+      transparent 60%
+    );
+  background-size: 80px 80px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 1280px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

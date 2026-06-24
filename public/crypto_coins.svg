@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fcd34d"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <linearGradient id="silver" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f3f4f6"/>
+      <stop offset="100%" stop-color="#9ca3af"/>
+    </linearGradient>
+    <linearGradient id="copper" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fdba74"/>
+      <stop offset="100%" stop-color="#ea580c"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+
+  <!-- Silver coin (back-left) -->
+  <g filter="url(#shadow)" transform="translate(72, 118)">
+    <circle cx="78" cy="78" r="72" fill="url(#silver)" stroke="#6b7280" stroke-width="3"/>
+    <circle cx="78" cy="78" r="58" fill="none" stroke="#d1d5db" stroke-width="2"/>
+    <path
+      d="M58 52h28c12 0 20 7 20 18 0 8-4 14-12 16 10 2 16 9 16 20 0 14-10 22-26 22H58V52zm18 14v22h10c7 0 11-3 11-10 0-7-4-10-11-10h-10zm0 36v24h12c9 0 14-4 14-12 0-8-5-12-14-12h-12z"
+      fill="#374151"
+    />
+  </g>
+
+  <!-- Gold coin (center, dominant) -->
+  <g filter="url(#shadow)" transform="translate(118, 92)">
+    <circle cx="82" cy="82" r="78" fill="url(#gold)" stroke="#b45309" stroke-width="3.5"/>
+    <circle cx="82" cy="82" r="62" fill="none" stroke="#fde68a" stroke-width="2.5"/>
+    <path
+      d="M62 48h34c18 0 30 10 30 26 0 12-6 20-18 24 14 4 22 13 22 28 0 20-16 32-38 32H62V48zm22 18v30h14c10 0 16-5 16-14 0-9-6-14-16-14H84zm0 44v34h16c12 0 19-6 19-16 0-11-7-18-19-18H84z"
+      fill="#78350f"
+    />
+  </g>
+
+  <!-- Copper coin (front-right) -->
+  <g filter="url(#shadow)" transform="translate(228, 148)">
+    <circle cx="68" cy="68" r="64" fill="url(#copper)" stroke="#c2410c" stroke-width="3"/>
+    <circle cx="68" cy="68" r="50" fill="none" stroke="#fed7aa" stroke-width="2"/>
+    <path
+      d="M52 38h20l12 38 12-38h20L94 108H74L52 38z"
+      fill="#7c2d12"
+    />
+  </g>
+</svg>
